@@ -1,0 +1,32 @@
+1) Write a Solidity Smart Contract for a Complete ERC721 Smart
+Contract where you can perform Minting the NFT by paying in
+Ethers, Limiting the supply of NFT’s, Allowing list functionality,
+Modifying the Minting functionality, Withdrawing functionality,
+and, clean up code by using internalMint() function.
+
+
+code for Complete ERC 721 Smart Contact -----
+
+
+//SPDX-Licence-Itendifier: MIT
+pragma solidity ^0.8.0;
+
+import "openzepplin/contracts/token/ERC721/ERC721.sol";
+import "openzepplin/contracts/utils/counters.sol";
+import "openzepplin/contracts/access/ownable.sol";
+
+contract MyNft is ERC721, ownable {
+    using counters for counters.counter;
+    counters.counter private _tokenIdcounter;
+
+    uint256 public maxsupply;
+    mapping(address => bool) public is Whitelisted;
+
+    constructor memoryname, string memory symbol, uint256 _maxsupply) ERC721(name,symbol){
+        maxsupply =_maxsupply;
+    }
+} 
+
+
+
+
